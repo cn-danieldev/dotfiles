@@ -1,0 +1,61 @@
+[user]
+	name = k1tyoo
+	email = appleid-cn-main@outlook.com
+
+[alias]
+	sa = status
+	go = checkout
+	br = branch
+	cm = commit
+	st = status
+	ps = push
+	pl = pull
+	tree = log --graph --oneline --all
+	s = status
+	out = fire
+	going = fire
+
+[commit]
+	gpgsign = true
+[core]
+	autocrlf = input
+	excludesfile = ~/.gitignore
+	ignorecase = false
+[gpg]
+	program = /usr/local/bin/gpg
+[mergetool]
+	keepBackup = false
+    
+[push]
+	default = upstream
+	autoSetupRemote = true
+[pull]
+	default = current
+	rebase = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[pull]
+	ff = only
+[init]
+	defaultBranch = main
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    side-by-side = true
+    line-numbers = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+[rebase]
+    autoStash = true
